@@ -17,7 +17,7 @@ Este é um sistema de gerenciamento hospitalar desenvolvido em Python usando o f
 
 - Python (versão X.X)
 - Django (versão X.X)
-- Outras dependências (listar dependências específicas, se houver)
+- banco de dados SQL
 
 ## Instalação
 
