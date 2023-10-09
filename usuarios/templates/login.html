@@ -2,37 +2,40 @@
 {% load static %}
 
 {% block 'head' %}
-<link href=" {% static 'geral/css/css.css' %}" rel="stylesheet">
+
+    <link href="{% static 'usuarios/css/usuario.css' %}" rel="stylesheet">
+
 {% endblock 'head' %}
 
+
+
 {% block 'conteudo' %}
-<div class="container">
-    <h3 class="font-destaque-secundaria">
-        <img width="10%" src="{% static 'geral/img/logo.png' %}" alt="">login
-    </h3>
-    
-    {% if messages %}
-        <br>
-        {% for message in messages %}
-        <div class="alert {{ message.tags }}">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-    
-    <div>
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            <label>Username</label>
+    <div class="container">
+
+        <h3 class="font-destaque-secundaria"> <img width="10%" src="{% static 'geral/img/logo.png' %}" alt="">Cadastre-se</h3>
+
+        {% if messages %}
             <br>
-            <input type="text" class="input-default" name="username">
-            <br>
-            <br>
-            <label>Senha</label>
-            <br>
-            <input type="text" class="input-default" name="senha">
-            <br>
-            <br>
-            <input type="submit" class="btn-default" value="Logar">
-        </form>
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+
+        <div>
+            <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <label>Username</label>
+                <br>
+                <input type="text" class="input-default" name="username">
+                <br>
+                <br>
+                <label>Senha</label>
+                <br>
+                <input type="password" class="input-default" name="senha">
+                <br>
+                <br>
+                <input type="submit" class="btn-default" value="Logar">
+            </form>
+        </div>
     </div>
-</div>
 {% endblock %}
